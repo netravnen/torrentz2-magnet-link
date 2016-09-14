@@ -6,11 +6,11 @@
 // @include       *://torrentz*.*
 // @match          http*://torrentz2.eu/*
 // @grant          none
-// @updateURL      https://openuserjs.org/install/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
-// @downloadURL    https://openuserjs.org/install/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
+// @updateURL      https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
+// @downloadURL    https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
 // @license        Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @copyright
-// @version        1.0.6.2
+// @version        1.0.6.2.1
 // ==/UserScript==
 
 // -----------------------------------------------------
