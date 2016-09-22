@@ -5,18 +5,23 @@
 // @include       *://torrentz.*
 // @include       *://torrentz*.*
 // @match          http*://torrentz2.eu/*
+// @match          http*://torrentz2.me/*
+// @match          http*://torrentzwealmisr.onion//*
 // @grant          none
 // @updateURL      https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
 // @downloadURL    https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
 // @license        Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
-// @version        1.0.6.2.1
+// @version        1.0.6.3
 // ==/UserScript==
 
 // -----------------------------------------------------
 // Created: 2009-11-17
-// Updated: 2016-08-28
+// Updated: 2016-09-22
 //
 // Changelog:
+//  - 1.0.6.3 (2016-09-22)
+//     - Added mirror sites torrentz2.me and torrentzwealmisr.onion
+//
 //  - 1.0.6.2 (2016-08-28)
 //     - Modified url regex pattern matching to enable the script to run on proxy sites
 //     - Added the inlcude lines *://torrentz.* and *://torrentz*.* to script properties
