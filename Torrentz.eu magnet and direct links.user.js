@@ -7,53 +7,57 @@
 // @match          http*://torrentz2.eu/*
 // @match          http*://torrentz2.me/*
 // @match          http*://torrentzwealmisr.onion//*
-// @grant          none
+// @grant          GM_addStyle
 // @updateURL      https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
 // @downloadURL    https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
 // @license        Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
-// @version        1.0.6.3
+// @version        1.0.7
 // ==/UserScript==
-
 // -----------------------------------------------------
+// Updated: 2017-01-15
 // Created: 2009-11-17
-// Updated: 2016-09-22
 //
 // Changelog:
-//  - 1.0.6.3 (2016-09-22)
-//     - Added mirror sites torrentz2.me and torrentzwealmisr.onion
+//  * 1.0.7 (2017-01-15)
+//    - Changed '@grant none' to '@grant GM_addStyle'.
+//    - Changed style '#magnetlinkurlid' to load with function 'GM_addStyle()' instead of more native
+//      javascript. Because of Chrome throwing errors related to style-src not set parameter.
 //
-//  - 1.0.6.2 (2016-08-28)
-//     - Modified url regex pattern matching to enable the script to run on proxy sites
-//     - Added the inlcude lines *://torrentz.* and *://torrentz*.* to script properties
+//  * 1.0.6.3 (2016-09-22)
+//    - Added mirror sites torrentz2.me and torrentzwealmisr.onion.
 //
-//  - 1.0.6.1 (2016-08-20)
-//     - Added tracker explodie.org and moved 9.rarbg.com to comments section for non-used trackers
+//  * 1.0.6.2 (2016-08-28)
+//    - Modified url regex pattern matching to enable the script to run on proxy sites.
+//    - Added the inlcude lines *://torrentz.* and *://torrentz*.* to script properties.
 //
-//  - 1.0.6 (2016-08-17)
-//     - updated matching domains to the new player called torrentz2.eu
-//     - torrentz.eu and all affiliated domains and mirror sites removed to the site suffering a slash back
+//  * 1.0.6.1 (2016-08-20)
+//    - Added tracker explodie.org and moved 9.rarbg.com to comments section for non-used trackers
 //
-//  - 1.0.5 (2012-11-15)
-//     - update for new domain (torrentz.eu)
-//     - and changing the default trackers (openbittorrent, publicbt, istole.it)
+//  * 1.0.6 (2016-08-17)
+//    - updated matching domains to the new player called torrentz2.eu.
+//    - torrentz.eu and all affiliated domains and mirror sites removed to the site suffering a slash back.
 //
-//  - 1.0.4 (2011-01-01)
-//     - update for new domain (torrentz.eu)
+//  * 1.0.5 (2012-11-15)
+//    - update for new domain (torrentz.eu).
+//    - and changing the default trackers (openbittorrent, publicbt, istole.it).
 //
-//  - 1.0.3 (2009-12-30)
-//     - fixed some more problems with 'www.torrentz.com'
-//     - adding three default trackers to any magnet link
+//  * 1.0.4 (2011-01-01)
+//    - update for new domain (torrentz.eu).
 //
-//  - 1.0.2 (2009-12-30)
-//     - now both 'www.torrentz.com' and 'torrenz.com' are
-//       correctly treated
+//  * 1.0.3 (2009-12-30)
+//    - fixed some more problems with 'www.torrentz.com'.
+//    - adding three default trackers to any magnet link.
 //
-//  - 1.0.1 (2009-12-05)
-//     - small bugfix (incompatibility with certain custom
-//       css styles)
+//  * 1.0.2 (2009-12-30)
+//    - now both 'www.torrentz.com' and 'torrenz.com' are
+//      correctly treated.
 //
-//  - 1.0.0 (2009-11-17)
-//     - initial release
+//  * 1.0.1 (2009-12-05)
+//    - small bugfix (incompatibility with certain custom
+//      css styles).
+//
+//  * 1.0.0 (2009-11-17)
+//    - initial release.
 // -----------------------------------------------------
 
 var url = null;
@@ -77,7 +81,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce'+
             */
-			/* USED TRACKERS */
+            /* USED TRACKERS */
             '&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.sktorrent.net%3A6969%2Fannounce'+
@@ -147,22 +151,8 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         {
             return;
         }
-        style = document.createElement('style');
-        style.type = 'text/css';
-        style.innerHTML = '#magnetlinkurlid {'+
-            '		border:1px #4995FF solid;'+
-            '		z-index:10000;'+
-            '		-moz-border-radius: 3px;'+
-            '		background: #AACDFF;'+
-            '		padding:4px 10px;'+
-            '		display:block;'+
-            '		position:fixed;'+
-            '		right:10px;'+
-            '		top:10px;'+
-            '		font-family:Verdana;'+
-            '		font-size:18px;'+
-            '	}';
-        head.appendChild(style);
+
+        GM_addStyle("#magnetlinkurlid { border:1px #4995FF solid; z-index:10000; -moz-border-radius:3px; background:#AACDFF; padding:4px 10px; display:block; position:fixed; right:10px; top:10px; font-family:Verdana; font-size:18px;");
 
         body = document.getElementsByTagName('body')[0];
         if (!body)
