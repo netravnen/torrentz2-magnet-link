@@ -11,13 +11,16 @@
 // @updateURL      https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
 // @downloadURL    https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
 // @license        Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
-// @version        1.0.7
+// @version        1.0.7.1
 // ==/UserScript==
 // -----------------------------------------------------
 // Updated: 2017-01-15
 // Created: 2009-11-17
 //
 // Changelog:
+//  * 1.0.7.1 (2017-01-15)
+//    - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
+
 //  * 1.0.7 (2017-01-15)
 //    - Changed '@grant none' to '@grant GM_addStyle'.
 //    - Changed style '#magnetlinkurlid' to load with function 'GM_addStyle()' instead of more native
@@ -96,7 +99,9 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
 
 
         // trackers to search for on the individual torrent page(s).
-        var needleTrackers = [ "http://mgtracker.org:2710/announce", "http://tracker.bittorrent.am/announce" ];
+        var needleTrackers = ["http://mgtracker.org:2710/announce",
+                              "http://tracker.bittorrent.am/announce",
+                              "udp://tracker.pirateparty.gr:6969/announce"];
 
         // get all the listed trackers for the particular torrent.
         var haystackTrackers = document.querySelectorAll( '.trackers > dl > dt > a' );
