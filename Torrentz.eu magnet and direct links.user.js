@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name            Torrentz2 (dot) eu magnet link
-// @namespace       Torrentz
+// @namespace       Torrentz2
 // @description     Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
 // @match            http://torrentz2.eu/*
 // @match           https://torrentz2.eu/*
