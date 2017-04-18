@@ -20,6 +20,9 @@
 // Created: 2009-11-17
 //
 // Changelog:
+//  * 1.x.x
+//    - New UserScript Attribute: contributionURL
+//    - New UserScript Attribute: supportURL
 //  * 1.0.8 (2017-04-18)
 //    - Added 'p4p.arenabg.ch' to array() 'needleTrackers'-in-a-'haystackTrackers'
 //    - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
