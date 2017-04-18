@@ -1,17 +1,19 @@
 // ==UserScript==
-// @name           Torrentz2 (dot) eu magnet link
-// @namespace      Torrentz
-// @description    Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
-// @include       *://torrentz.*
-// @include       *://torrentz*.*
-// @match          http*://torrentz2.eu/*
-// @match          http*://torrentz2.me/*
-// @match          http*://torrentzwealmisr.onion//*
-// @grant          GM_addStyle
-// @updateURL      https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
-// @downloadURL    https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
-// @license        Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
-// @version        1.0.8
+// @name            Torrentz2 (dot) eu magnet link
+// @namespace       Torrentz
+// @description     Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
+// @include         *://torrentz.*
+// @include         *://torrentz*.*
+// @match           http*://torrentz2.eu/*
+// @match           http*://torrentz2.me/*
+// @match           http*://torrentzwealmisr.onion//*
+// @grant           GM_addStyle
+// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
+// @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
+// @contributionURL https://github.com/netravnen/torrentz2-magnet-link
+// @supportURL      https://github.com/netravnen/torrentz2-magnet-link
+// @version         1.0.8
 // ==/UserScript==
 // -----------------------------------------------------
 // Updated: 2017-04-18
