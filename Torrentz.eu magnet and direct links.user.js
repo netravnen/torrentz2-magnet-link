@@ -2,11 +2,16 @@
 // @name            Torrentz2 (dot) eu magnet link
 // @namespace       Torrentz
 // @description     Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
-// @include         *://torrentz.*
-// @include         *://torrentz*.*
-// @match           http*://torrentz2.eu/*
-// @match           http*://torrentz2.me/*
-// @match           http*://torrentzwealmisr.onion//*
+// @match            http://torrentz2.eu/*
+// @match           https://torrentz2.eu/*
+// @match            http://torrentz2.me/*
+// @match           https://torrentz2.me/*
+// @match            http://torrentzwealmisr.onion/*
+// @match           https://torrentzwealmisr.onion/*
+// @include          http://torrentz.*
+// @include         https://torrentz.*
+// @include          http://torrentz2.*
+// @include         https://torrentz2.*
 // @grant           GM_addStyle
 // @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
 // @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
@@ -23,6 +28,7 @@
 //  * 1.x.x
 //    - New UserScript Attribute: contributionURL
 //    - New UserScript Attribute: supportURL
+//    - Changed the match and inlcude UserScript attributes to use http(s) instead of wildcards
 //  * 1.0.8 (2017-04-18)
 //    - Added 'p4p.arenabg.ch' to array() 'needleTrackers'-in-a-'haystackTrackers'
 //    - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
