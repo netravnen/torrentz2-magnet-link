@@ -65,12 +65,15 @@
 //    - initial release.
 // -----------------------------------------------------
 
-var url = null;
+var url;
+url = null;
 if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-f0-9]{40})/)))
 {
     if (url !== null)
     {
-        var hash = url[5];
+        var hash, trackers, needleTrackers, haystackTrackers, title, magnet, head, style, body;
+        
+        hash = url[5];
 
         // default trackers for every magnet link.
         trackers =
@@ -101,14 +104,14 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
 
 
         // trackers to search for on the individual torrent page(s).
-        var needleTrackers = ["http://mgtracker.org:2710/announce",
-                             "http://tracker.bittorrent.am/announce",
-                             "udp://tracker.pirateparty.gr:6969/announce",
-                             "udp://p4p.arenabg.ch:1337/announce",
-                             "udp://tracker.pirateparty.gr:6969/announce"];
+        needleTrackers = ["http://mgtracker.org:2710/announce",
+                         "http://tracker.bittorrent.am/announce",
+                         "udp://tracker.pirateparty.gr:6969/announce",
+                         "udp://p4p.arenabg.ch:1337/announce",
+                         "udp://tracker.pirateparty.gr:6969/announce"];
 
         // get all the listed trackers for the particular torrent.
-        var haystackTrackers = document.querySelectorAll( '.trackers > dl > dt > a' );
+        haystackTrackers = document.querySelectorAll( '.trackers > dl > dt > a' );
 
         // if one or more of the trackers listed for this torrent is included amongst the needleTrackers, append it to the default trackers.
         for (i=0; i<haystackTrackers.length; i++)
@@ -123,10 +126,11 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         }
 
         // read title
-        var title = encodeURIComponent( document.querySelector( '.download > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
+        title = encodeURIComponent( document.querySelector( '.download > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
         if (title.length == 40 && title.match(/[0-9a-z]+/i) && title == hash)
         {
-            var tpb = document.querySelector('.download a[href^="https://thepiratebay.org"] .n'); var bitsno = document.querySelector('.download a[href^="http://bitsnoop.com"] .n');
+            var tpb;
+            tpb = document.querySelector('.download a[href^="https://thepiratebay.org"] .n'); var bitsno = document.querySelector('.download a[href^="http://bitsnoop.com"] .n');
             if(tpb !== null)
             {
                 //if the title is equal to the hash, go for the title from TPB.
@@ -151,10 +155,9 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         title = '&dn=' + title;
 
         // generate the magnet link
-        var magnet = "magnet:?xt=urn:btih:"+hash+title+trackers;
+        magnet = "magnet:?xt=urn:btih:"+hash+title+trackers;
 
         // add downloadlink
-        var head, style, body;
         head = document.getElementsByTagName('head')[0];
         if (!head)
         {
