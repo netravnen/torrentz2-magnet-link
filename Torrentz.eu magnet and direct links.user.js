@@ -18,12 +18,13 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.9
+// @version         1.0.10
 // ==/UserScript==
 // -----------------------------------------------------
 //
 // Changelog:
-//  * 1.x.x
+//  * 1.0.10
+//    - Fix: Changed class ".download" to ".downlinks"
 //  * 1.0.9 (2017-04-20)
 //    - New UserScript Attribute: contributionURL
 //    - New UserScript Attribute: supportURL
@@ -66,11 +67,15 @@
 // -----------------------------------------------------
 
 var url;
+
 url = null;
+
 if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-f0-9]{40})/)))
 {
     if (url !== null)
     {
+        console.log
+        
         var hash, trackers, needleTrackers, haystackTrackers, title, magnet, head, style, body;
         
         hash = url[5];
@@ -126,11 +131,12 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         }
 
         // read title
-        title = encodeURIComponent( document.querySelector( '.download > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
+        title = encodeURIComponent( document.querySelector( '.downlinks > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
         if (title.length == 40 && title.match(/[0-9a-z]+/i) && title == hash)
         {
-            var tpb;
-            tpb = document.querySelector('.download a[href^="https://thepiratebay.org"] .n'); var bitsno = document.querySelector('.download a[href^="http://bitsnoop.com"] .n');
+            var tpb, bitsno;
+            tpb = document.querySelector('.downlinks a[href^="https://thepiratebay.org"] .n');
+            bitsno = document.querySelector('.downlinks a[href^="http://bitsnoop.com"] .n');
             if(tpb !== null)
             {
                 //if the title is equal to the hash, go for the title from TPB.
@@ -144,7 +150,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         else if (title === ''||null||undefined)
         {
             //if the title is still not valied, go for the one from katproxy.com.
-            title = encodeURIComponent(document.querySelector('.download a[href^="http://katproxy.com"] .n').innerHTML);
+            title = encodeURIComponent(document.querySelector('.downlinks a[href^="http://katproxy.com"] .n').innerHTML);
         }
         else if (title === ''||null||undefined)
         {
