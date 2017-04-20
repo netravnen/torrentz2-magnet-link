@@ -18,14 +18,13 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.8
+// @version         1.0.9
 // ==/UserScript==
 // -----------------------------------------------------
-// Updated: 2017-04-18
-// Created: 2009-11-17
 //
 // Changelog:
 //  * 1.x.x
+//  * 1.0.9 (2017-04-20)
 //    - New UserScript Attribute: contributionURL
 //    - New UserScript Attribute: supportURL
 //    - Changed the match and inlcude UserScript attributes to use http(s) instead of wildcards
