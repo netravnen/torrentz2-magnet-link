@@ -2,15 +2,10 @@
 // @name            Torrentz2 (dot) eu magnet link
 // @namespace       Torrentz2
 // @description     Adds direct download links to the result pages of torrentz2.eu. It uses the so-called magnet URI scheme to provide a more user-friendly, faster way to access your favorite torrents.
-// @match            http://torrentz2.eu/*
 // @match           https://torrentz2.eu/*
-// @match            http://torrentz2.me/*
 // @match           https://torrentz2.me/*
-// @match            http://torrentzwealmisr.onion/*
 // @match           https://torrentzwealmisr.onion/*
-// @include          http://torrentz.*
 // @include         https://torrentz.*
-// @include          http://torrentz2.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
 // @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
@@ -18,11 +13,14 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.10
+// @version         1.0.11
 // ==/UserScript==
 // -----------------------------------------------------
 //
 // Changelog:
+//  * 1.0.11
+//    - Do not use pow7 tracker anymore
+//    - Removed http protocol mathcing of urls. Now only https url matching
 //  * 1.0.10
 //    - Fix: Changed class ".download" to ".downlinks"
 //  * 1.0.9 (2017-04-20)
@@ -93,12 +91,12 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=udp%3A%2F%2Ftracker.prq.to%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce'+
+            '&tr=http%3A%2F%2Fpow7.com%3A80%2Fannounce'+
             */
             /* USED TRACKERS */
             '&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.sktorrent.net%3A6969%2Fannounce'+
-            '&tr=http%3A%2F%2Fpow7.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce'+
