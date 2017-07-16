@@ -13,7 +13,7 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.11
+// @version         1.0.12
 // ==/UserScript==
 // -----------------------------------------------------
 //
