@@ -18,6 +18,8 @@
 // -----------------------------------------------------
 //
 // Changelog:
+//  * 1.0.12
+//    - Fix: zer0day changed to .to top-domain
 //  * 1.0.11
 //    - Do not use pow7 tracker anymore
 //    - Removed http protocol mathcing of urls. Now only https url matching
@@ -101,7 +103,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Fzer0day.ch%3A1337%2Fannounce'+
+            '&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce';
 
 
