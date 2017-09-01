@@ -13,11 +13,16 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.12
+// @version         1.0.13
 // ==/UserScript==
 // -----------------------------------------------------
 //
 // Changelog:
+//  * 1.0.13
+//    - Added tracker: exodus.desync.com
+//    - Added tracker: tracker.pirateparty.gr
+//    - Added tracker: oscar.reyesleon.xyz
+//    - Added tracker: tracker.cyberia.is
 //  * 1.0.12
 //    - Fix: zer0day changed to .to top-domain
 //  * 1.0.11
@@ -74,10 +79,8 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
 {
     if (url !== null)
     {
-        console.log
-        
         var hash, trackers, needleTrackers, haystackTrackers, title, magnet, head, style, body;
-        
+
         hash = url[5];
 
         // default trackers for every magnet link.
@@ -104,7 +107,11 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce';
+            '&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Foscar.reyesleon.xyz%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce';
 
 
 
