@@ -8,15 +8,17 @@
 // @include         https://torrentz.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
-// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
-// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
+// @updateURL       https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
+// @downloadURL     https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.14
+// @version         1.0.14.1
 
 /*
 ## Changelog
+- v1.0.14.1
+  - Changed updateURL and downloadURL to github.com raw link to script
 - v1.0.14
   - Added tracker: tracker2.indowebster.com
 - v1.0.13
