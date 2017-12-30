@@ -8,16 +8,18 @@
 // @include         https://torrentz.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
-// @updateURL       https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
-// @downloadURL     https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
+// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js 
+// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js 
 // @license         CC-BY-SA-3.0; http://creativecommons.org/licenses/by-sa/3.0/
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.14.2
+// @version         1.0.14.3
 // ==/UserScript==
 /*
 ## Changelog
+- v1.0.14.3
+  - Changed updateURL and downloadURL BACK to openuserjs.org
 - v1.0.14.2
   - Added dual license BSD-3-Clause to be compliant with OpenUserJS TOS https://openuserjs.org/about/Terms-of-Service
 - v1.0.14.1
