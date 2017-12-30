@@ -10,11 +10,11 @@
 // @grant           GM_addStyle
 // @updateURL       https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
 // @downloadURL     https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
-// @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
+// @license         CC BY-SA 3.0; http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
 // @version         1.0.14.1
-
+// ==/UserScript==
 /*
 ## Changelog
 - v1.0.14.1
@@ -73,7 +73,6 @@
 - v1.0.0 (2009-11-17)
   - initial release.
 */
-// ==/UserScript==
 
 var url;
 
