@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Torrentz2 (dot) eu magnet link
 // @namespace       Torrentz2
-// @description     Adds direct download links to the pages on torrentz2.*. It uses the magnet URI scheme to provide a user friendly, faster way to access your favorite torrents.
+// @description     Adds direct download links to the pages on https://torrentz2.*. It uses the magnet URI scheme to provide a user friendly, faster way to access your favorite torrents.
 // @match           https://torrentz2.eu/*
 // @match           https://torrentz2.me/*
 // @match           https://torrentzwealmisr.onion/*
@@ -19,7 +19,7 @@
 /*
 ## Changelog
 - v1.0.14.3
-  - Changed updateURL and downloadURL BACK to openuserjs.org
+  - Changed updateURL and downloadURL BACK to openuserjs.org after fixing TOS compliance
 - v1.0.14.2
   - Added dual license BSD-3-Clause to be compliant with OpenUserJS TOS https://openuserjs.org/about/Terms-of-Service
 - v1.0.14.1
