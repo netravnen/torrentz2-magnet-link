@@ -13,63 +13,65 @@
 // @license         Creative Commons Attribution-Share Alike http://creativecommons.org/licenses/by-sa/3.0/
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.13
+// @version         1.0.14
+
+/*
+## Changelog
+- v1.0.14
+  - Added tracker: tracker2.indowebster.com
+- v1.0.13
+  - Added tracker: exodus.desync.com
+  - Added tracker: tracker.pirateparty.gr
+  - Added tracker: oscar.reyesleon.xyz
+  - Added tracker: tracker.cyberia.is
+- v1.0.12
+  - Fix: zer0day changed to .to top-domain
+- v1.0.11
+  - Do not use pow7 tracker anymore
+  - Removed http protocol mathcing of urls. Now only https url matching
+- v1.0.10
+  - Fix: Changed class ".download" to ".downlinks"
+- v1.0.9 (2017-04-20)
+  - New UserScript Attribute: contributionURL
+  - New UserScript Attribute: supportURL
+  - Changed the match and inlcude UserScript attributes to use http(s) instead of wildcards
+- v1.0.8 (2017-04-18)
+  - Added 'p4p.arenabg.ch' to array() 'needleTrackers'-in-a-'haystackTrackers'
+  - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
+- v1.0.7.1 (2017-01-15)
+  - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
+- v1.0.7 (2017-01-15)
+  - Changed '@grant none' to '@grant GM_addStyle'.
+  - Changed style '#magnetlinkurlid' to load with function 'GM_addStyle()' instead of more native
+    javascript. Because of Chrome throwing errors related to style-src not set parameter.
+- v1.0.6.3 (2016-09-22)
+  - Added mirror sites torrentz2.me and torrentzwealmisr.onion.
+- v1.0.6.2 (2016-08-28)
+  - Modified url regex pattern matching to enable the script to run on proxy sites.
+  - Added the inlcude lines *://torrentz.- vand *://torrentz*.- vto script properties.
+- v1.0.6.1 (2016-08-20)
+  - Added tracker explodie.org and moved 9.rarbg.com to comments section for non-used trackers
+- v1.0.6 (2016-08-17)
+  - updated matching domains to the new player called torrentz2.eu.
+  - torrentz.eu and all affiliated domains and mirror sites removed to the site suffering a slash back.
+- v1.0.5 (2012-11-15)
+  - update for new domain (torrentz.eu).
+  - and changing the default trackers (openbittorrent, publicbt, istole.it).
+- v1.0.4 (2011-01-01)
+  - update for new domain (torrentz.eu).
+- v1.0.3 (2009-12-30)
+  - fixed some more problems with 'www.torrentz.com'.
+  - adding three default trackers to any magnet link.
+- v1.0.2 (2009-12-30)
+  - now both 'www.torrentz.com' and 'torrenz.com' are
+    correctly treated.
+- v1.0.1 (2009-12-05)
+  - small bugfix (incompatibility with certain custom
+    css styles).
+- v1.0.0 (2009-11-17)
+  - initial release.
+*/
 // ==/UserScript==
-// -----------------------------------------------------
-//
-// Changelog:
-//  * 1.0.13
-//    - Added tracker: exodus.desync.com
-//    - Added tracker: tracker.pirateparty.gr
-//    - Added tracker: oscar.reyesleon.xyz
-//    - Added tracker: tracker.cyberia.is
-//  * 1.0.12
-//    - Fix: zer0day changed to .to top-domain
-//  * 1.0.11
-//    - Do not use pow7 tracker anymore
-//    - Removed http protocol mathcing of urls. Now only https url matching
-//  * 1.0.10
-//    - Fix: Changed class ".download" to ".downlinks"
-//  * 1.0.9 (2017-04-20)
-//    - New UserScript Attribute: contributionURL
-//    - New UserScript Attribute: supportURL
-//    - Changed the match and inlcude UserScript attributes to use http(s) instead of wildcards
-//  * 1.0.8 (2017-04-18)
-//    - Added 'p4p.arenabg.ch' to array() 'needleTrackers'-in-a-'haystackTrackers'
-//    - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
-//  * 1.0.7.1 (2017-01-15)
-//    - Added 'tracker.pirateparty.gr' to array() 'needleTrackers'-in-a-'haystackTrackers'
-//  * 1.0.7 (2017-01-15)
-//    - Changed '@grant none' to '@grant GM_addStyle'.
-//    - Changed style '#magnetlinkurlid' to load with function 'GM_addStyle()' instead of more native
-//      javascript. Because of Chrome throwing errors related to style-src not set parameter.
-//  * 1.0.6.3 (2016-09-22)
-//    - Added mirror sites torrentz2.me and torrentzwealmisr.onion.
-//  * 1.0.6.2 (2016-08-28)
-//    - Modified url regex pattern matching to enable the script to run on proxy sites.
-//    - Added the inlcude lines *://torrentz.* and *://torrentz*.* to script properties.
-//  * 1.0.6.1 (2016-08-20)
-//    - Added tracker explodie.org and moved 9.rarbg.com to comments section for non-used trackers
-//  * 1.0.6 (2016-08-17)
-//    - updated matching domains to the new player called torrentz2.eu.
-//    - torrentz.eu and all affiliated domains and mirror sites removed to the site suffering a slash back.
-//  * 1.0.5 (2012-11-15)
-//    - update for new domain (torrentz.eu).
-//    - and changing the default trackers (openbittorrent, publicbt, istole.it).
-//  * 1.0.4 (2011-01-01)
-//    - update for new domain (torrentz.eu).
-//  * 1.0.3 (2009-12-30)
-//    - fixed some more problems with 'www.torrentz.com'.
-//    - adding three default trackers to any magnet link.
-//  * 1.0.2 (2009-12-30)
-//    - now both 'www.torrentz.com' and 'torrenz.com' are
-//      correctly treated.
-//  * 1.0.1 (2009-12-05)
-//    - small bugfix (incompatibility with certain custom
-//      css styles).
-//  * 1.0.0 (2009-11-17)
-//    - initial release.
-// -----------------------------------------------------
 
 var url;
 
@@ -85,12 +87,10 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
 
         // default trackers for every magnet link.
         trackers =
-            /*
-            NON-USED TRACKERS
+            /* NON-USED TRACKERS
             '&tr=udp%3A%2F%2F10.rarbg.me%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2F12.rarbg.me%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Fbt.rghost.net%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ffr33domtracker.h33t.com%3A3310%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.istole.it%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.prq.to%3A80%2Fannounce'+
@@ -99,6 +99,9 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=http%3A%2F%2Fpow7.com%3A80%2Fannounce'+
             */
             /* USED TRACKERS */
+            '&tr=udp%3A%2F%2Ftracker2.indowebster.com%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
+            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.sktorrent.net%3A6969%2Fannounce'+
