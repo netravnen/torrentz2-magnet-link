@@ -14,10 +14,15 @@
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.14.3
+// @version         1.0.15
 // ==/UserScript==
 /*
 ## Changelog
+- v1.0.15
+  - Added http tracker: explodie.org
+  - Added http tracker: mgtracker.org
+  - Added http tracker: t1.pow7.com
+  - Added http tracker: thetracker.org
 - v1.0.14.3
   - Changed updateURL and downloadURL BACK to openuserjs.org after fixing TOS compliance
 - v1.0.14.2
@@ -101,10 +106,16 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
             '&tr=udp%3A%2F%2Ftracker.istole.it%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.prq.to%3A80%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce'+
             '&tr=http%3A%2F%2Fpow7.com%3A80%2Fannounce'+
             */
             /* USED TRACKERS */
+            // http
+            '&tr=http%3A%2F%2Fexplodie.org%3A6969%2Fannounce'+
+            '&tr=http%3A%2F%2Fmgtracker.org%3A2710%2Fannounce'+
+            '&tr=http%3A%2F%2Ft1.pow7.com%3A80%2Fannounce'+
+            '&tr=http%3A%2F%2Fthetracker.org%3A80%2Fannounce'+
+            // udp
+            '&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce'+
             '&tr=udp%3A%2F%2Ftracker2.indowebster.com%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
             '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
