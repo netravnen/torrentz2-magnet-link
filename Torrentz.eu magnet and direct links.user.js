@@ -8,8 +8,8 @@
 // @include         https://torrentz.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
-// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js 
-// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js 
+// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
+// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
 // @license         CC-BY-SA-3.0; http://creativecommons.org/licenses/by-sa/3.0/
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
