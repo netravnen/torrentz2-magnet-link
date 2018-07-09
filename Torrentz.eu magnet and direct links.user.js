@@ -8,16 +8,19 @@
 // @include         https://torrentz.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
-// @updateURL       https://greasyfork.org/scripts/23145-torrentz2-dot-eu-magnet-link/code/Torrentz2%20(dot)%20eu%20magnet%20link.user.js
-// @downloadURL     https://greasyfork.org/scripts/23145-torrentz2-dot-eu-magnet-link/code/Torrentz2%20(dot)%20eu%20magnet%20link.user.js
+// @updateURL       https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
+// @downloadURL     https://github.com/netravnen/torrentz2-magnet-link/raw/master/Torrentz.eu%20magnet%20and%20direct%20links.user.js
 // @license         CC-BY-SA-3.0; http://creativecommons.org/licenses/by-sa/3.0/
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.1.1
+// @version         1.1.2
 // ==/UserScript==
 /*
 ## Changelog
+- v1.1.2
+  - Updated @updateURL
+  - Updated @downloadURL
 - v1.1.1
   - Updated @updateURL
   - Updated @downloadURL
