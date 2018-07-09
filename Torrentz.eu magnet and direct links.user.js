@@ -14,10 +14,13 @@
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.1.2
+// @version         1.1.3
 // ==/UserScript==
 /*
 ## Changelog
+- v1.1.3
+  - Forgot to replace ':' with '%3A'
+  - Forgot to replace '/' with '%2F'
 - v1.1.2
   - Updated @updateURL
   - Updated @downloadURL
@@ -110,7 +113,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         trackers_a = document.querySelectorAll( '.trackers > dl > dt' );
         trackers = null;
         for (var i=0;i<trackers_a.length;++i) {
-            trackers += '&dn=' + trackers_a[i].innerHTML;
+            trackers += '&dn=' + trackers_a[i].innerHTML.replace(':','%3A').replace('/','%2F');
         }
 
         // read title
