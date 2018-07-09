@@ -8,8 +8,8 @@
 // @include         https://torrentz.*
 // @include         https://torrentz2.*
 // @grant           GM_addStyle
-// @updateURL       https://openuserjs.org/meta/Jeni4/Torrentz2_(dot)_eu_magnet_link.meta.js
-// @downloadURL     https://openuserjs.org/src/scripts/Jeni4/Torrentz2_(dot)_eu_magnet_link.user.js
+// @updateURL       https://greasyfork.org/scripts/23145-torrentz2-dot-eu-magnet-link/code/Torrentz2%20(dot)%20eu%20magnet%20link.user.js
+// @downloadURL     https://greasyfork.org/scripts/23145-torrentz2-dot-eu-magnet-link/code/Torrentz2%20(dot)%20eu%20magnet%20link.user.js
 // @license         CC-BY-SA-3.0; http://creativecommons.org/licenses/by-sa/3.0/
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
@@ -18,6 +18,9 @@
 // ==/UserScript==
 /*
 ## Changelog
+- v1.1.1
+  - Updated @updateURL
+  - Updated @downloadURL
 - v1.1.0
   - Removed all predefined trackers.
   - Now only using the listed trackers listed for the individual torrent
