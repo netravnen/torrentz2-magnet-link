@@ -14,10 +14,13 @@
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.0.15
+// @version         1.1.0
 // ==/UserScript==
 /*
 ## Changelog
+- v1.1.0
+  - Removed all predefined trackers.
+  - Now only using the listed trackers listed for the individual torrent
 - v1.0.15
   - Added http tracker: explodie.org
   - Added http tracker: mgtracker.org
@@ -92,69 +95,16 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
 {
     if (url !== null)
     {
-        var hash, trackers, needleTrackers, haystackTrackers, title, magnet, head, style, body;
+        var hash, trackers_a, trackers, title, magnet, head, style, body;
 
         hash = url[5];
 
-        // default trackers for every magnet link.
-        trackers =
-            /* NON-USED TRACKERS
-            '&tr=udp%3A%2F%2F10.rarbg.me%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2F12.rarbg.me%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Fbt.rghost.net%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Ffr33domtracker.h33t.com%3A3310%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.istole.it%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.prq.to%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce'+
-            '&tr=http%3A%2F%2Fpow7.com%3A80%2Fannounce'+
-            */
-            /* USED TRACKERS */
-            // http
-            '&tr=http%3A%2F%2Fexplodie.org%3A6969%2Fannounce'+
-            '&tr=http%3A%2F%2Fmgtracker.org%3A2710%2Fannounce'+
-            '&tr=http%3A%2F%2Ft1.pow7.com%3A80%2Fannounce'+
-            '&tr=http%3A%2F%2Fthetracker.org%3A80%2Fannounce'+
-            // udp
-            '&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker2.indowebster.com%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.sktorrent.net%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Fglotorrents.pw%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.zer0day.to%3A1337%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexplodie.org%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Foscar.reyesleon.xyz%3A6969%2Fannounce'+
-            '&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce';
-
-
-
-        // trackers to search for on the individual torrent page(s).
-        needleTrackers = ["http://mgtracker.org:2710/announce",
-                         "http://tracker.bittorrent.am/announce",
-                         "udp://tracker.pirateparty.gr:6969/announce",
-                         "udp://p4p.arenabg.ch:1337/announce",
-                         "udp://tracker.pirateparty.gr:6969/announce"];
 
         // get all the listed trackers for the particular torrent.
-        haystackTrackers = document.querySelectorAll( '.trackers > dl > dt > a' );
-
-        // if one or more of the trackers listed for this torrent is included amongst the needleTrackers, append it to the default trackers.
-        for (i=0; i<haystackTrackers.length; i++)
-        {
-            for (j=0; j<needleTrackers.length; j++)
-            {
-                if (haystackTrackers[i].innerHTML == needleTrackers[j])
-                {
-                    trackers += '&tr=' + encodeURIComponent(haystackTrackers[i].innerHTML);
-                }
-            }
+        trackers_a = document.querySelectorAll( '.trackers > dl > dt' );
+        trackers = null;
+        for (var i=0;i<trackers_a.length;++i) {
+            trackers += '&dn=' + trackers_a[i].innerHTML;
         }
 
         // read title
