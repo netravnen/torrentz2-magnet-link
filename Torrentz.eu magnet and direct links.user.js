@@ -14,7 +14,7 @@
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.1.0
+// @version         1.1.1
 // ==/UserScript==
 /*
 ## Changelog
