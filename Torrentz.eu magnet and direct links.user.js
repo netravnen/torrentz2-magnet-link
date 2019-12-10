@@ -119,12 +119,12 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         }
 
         // read title
-        title = encodeURIComponent( document.querySelector( '.downlinks > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
+        title = encodeURIComponent( document.querySelector( '.downurls > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
         if (title.length == 40 && title.match(/[0-9a-z]+/i) && title == hash)
         {
             var tpb, bitsno;
-            tpb = document.querySelector('.downlinks a[href^="https://thepiratebay.org"] .n');
-            bitsno = document.querySelector('.downlinks a[href^="http://bitsnoop.com"] .n');
+            tpb = document.querySelector('.downurls a[href^="https://thepiratebay.org"] .n');
+            bitsno = document.querySelector('.downurls a[href^="http://bitsnoop.com"] .n');
             if(tpb !== null)
             {
                 //if the title is equal to the hash, go for the title from TPB.
@@ -138,7 +138,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         else if (title === ''||null||undefined)
         {
             //if the title is still not valied, go for the one from katproxy.com.
-            title = encodeURIComponent(document.querySelector('.downlinks a[href^="http://katproxy.com"] .n').innerHTML);
+            title = encodeURIComponent(document.querySelector('.downurls a[href^="http://katproxy.com"] .n').innerHTML);
         }
         else if (title === ''||null||undefined)
         {
