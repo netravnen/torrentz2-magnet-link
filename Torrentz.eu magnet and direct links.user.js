@@ -14,7 +14,7 @@
 // @license         BSD-3-Clause; https://opensource.org/licenses/BSD-3-Clause
 // @contributionURL https://github.com/netravnen/torrentz2-magnet-link
 // @supportURL      https://github.com/netravnen/torrentz2-magnet-link
-// @version         1.1.4
+// @version         1.1.5
 // ==/UserScript==
 /*
 ## Changelog
@@ -119,7 +119,7 @@ if ((url = location.href.match(/torrentz(2)?(\.([a-z0-9]+))?\.([a-z]{2,8})\/([a-
         }
 
         // read title
-        title = encodeURIComponent( document.querySelector( '.downlinks > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
+        title = encodeURIComponent( document.querySelector( '.downurls > h2 > span' ).innerHTML.replace('"','') ).replace('%26amp%3B','and');
         if (title.length == 40 && title.match(/[0-9a-z]+/i) && title == hash)
         {
             var tpb, bitsno;
